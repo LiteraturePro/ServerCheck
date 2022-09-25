@@ -2,3 +2,4 @@ flask
 pyecharts
 psutil
 gunicorn
+requests
