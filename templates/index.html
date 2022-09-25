@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container" style="padding-top: 100px">
-      <h>服务器运行环境监控</h>
+      <h style="text-align:center">服务器运行环境监控</h>
         <div class="row user-list">
         <div class="col-sm-12 user" style="">
             <div id="alert" class="alert alert-success" role="alert" style="margin: auto;left: 0;right: 0;display: none;position: fixed;width: 50%;text-align: center;">删除成功</div>
@@ -94,12 +94,13 @@
       </div>
   </div>
 <div class="container" style="padding-top: 10px">
-  <h>服务器运行环境监控</h>
+  <h style="text-align:center">服务器运行环境监控</h>
   {% from 'bootstrap4/utils.html' import render_icon %}
 
-  {{ render_icon('wifi',color='green',size='256px') }}
-  {{ render_icon('wifi-off',color='red',size='256px') }}
-  <h>服务器运行环境监控</h>
+  {{ render_icon('wifi',color='green',size='32px') }}
+  
+  {{ render_icon('wifi-off',color='red',size='32px') }}
+  <h style="text-align:center"> 服务器运行环境监控</h>
 </div>
 <div class="container" style="padding-top: 10px">
   <h>网络代理节点在线监控</h>
