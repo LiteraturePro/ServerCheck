@@ -401,6 +401,16 @@ def get_disk_chart():
     total, used, free, c = disk_line()
     return jsonify({'total': total, 'used': used, 'free': free, 'line': c.dump_options_with_quotes()})
 
+## 第三部分
+
+@app.route("/nezha")
+def get_nezha_api():
+    url = "http://194.87.236.155:8008/api/v1/server/details?id=6,17,18,22,23"
+    headers = {
+	    "Authorization": "fd88a2eb05fb6ecf049cca8811e6473d"
+    }
+    return jsonify(json.loads(res.text))
+
 if __name__ == "__main__":
     launch_checker()
     app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
