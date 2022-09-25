@@ -42,3 +42,4 @@ class CheckSingleURLTestCase(unittest.TestCase):
     def test_connrefused_url(self):
         result = check_single_url('http://127.0.0.1:8080')
         self.assertEqual(result, 'UNREACHABLE')
+unittest.main() 
