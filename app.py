@@ -409,6 +409,7 @@ def get_nezha_api():
     headers = {
 	    "Authorization": "fd88a2eb05fb6ecf049cca8811e6473d"
     }
+    res = requests.get(url,headers=headers)
     return jsonify(json.loads(res.text))
 
 if __name__ == "__main__":
