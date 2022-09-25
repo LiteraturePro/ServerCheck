@@ -266,4 +266,4 @@ def get_disk_chart():
     return jsonify({'total': total, 'used': used, 'free': free, 'line': c.dump_options_with_quotes()})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=8080)
