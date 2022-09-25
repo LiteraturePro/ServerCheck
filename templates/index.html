@@ -372,11 +372,12 @@
                 url: "/nezha",
                 dataType: 'json',
                 success: function (result) {
-		   var jsonobj = JSON.parse(result);
                    console.log(result)
-		   console.log(jsonobj.result)
-			
-		   document.getElementById("vless_6").innerHTML='100G';
+		   console.log(result.result)
+		   for (let i = 0; i < result.result.length; ++i) {
+			 console.log(result.result[i]);
+		   }
+		   document.getElementById("vless_6").innerHTML=result.result[i].ipv4;
                 }
             });
         }
