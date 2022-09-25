@@ -106,7 +106,7 @@ def generate_list_urls(input_dict):
 @app.route("/url", methods=["GET"])
 def display_returned_statuses():
     return render_template(
-        'index.html',
+        'indexurl.html',
         returned_statuses = returned_statuses,
         checkurls = checkurls,
         last_update_time = last_update_time,
@@ -119,7 +119,7 @@ def result():
     if request.method == 'POST':
         results = compare_submitted(escape(request.form['submitted']))
         return render_template(
-        'index.html',
+        'indexurl.html',
         results = results,
         returned_statuses = returned_statuses,
         checkurls = checkurls,
