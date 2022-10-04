@@ -390,7 +390,7 @@
                 success: function (result) {
 		   for (let i = 0; i < result.result.length; i++) {
 			 document.getElementById("vless_6").innerHTML=result.result[i].ipv4;
-			 console.log(result.result[i]);
+			 if(result.result[i].id == 6){console.log(result.result[i]);}
 		   }
 		   
                 }
