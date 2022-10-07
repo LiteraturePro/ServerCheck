@@ -4,3 +4,4 @@ psutil
 gunicorn
 requests
 bootstrap-flask
+sentry-sdk[flask]
