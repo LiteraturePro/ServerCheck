@@ -18,8 +18,25 @@ from settings import refresh_interval, filename, site_down, number_threads, incl
 
 
 
-
 from flask_bootstrap import Bootstrap
+
+import sentry_sdk
+from flask import Flask
+from sentry_sdk.integrations.flask import FlaskIntegration
+
+sentry_sdk.init(
+    dsn="https://103ac223f0e6447c9ddedd63cc08bdfb@o513531.ingest.sentry.io/4503940523294720",
+    integrations=[
+        FlaskIntegration(),
+    ],
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0
+)
+
+
 
 
 app = Flask(__name__, static_folder="templates")
@@ -411,6 +428,12 @@ def get_nezha_api():
     }
     res = requests.get(url,headers=headers)
     return jsonify(json.loads(res.text))
+
+
+@app.route('/debug-sentry')
+def trigger_error():
+    division_by_zero = 1 / 0
+
 
 if __name__ == "__main__":
     launch_checker()
